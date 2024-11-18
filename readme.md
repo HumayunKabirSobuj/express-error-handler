@@ -1,4 +1,4 @@
-# //custom error handler
+# custom error handler
 
 ```
 app.all('*', (req: Request, res: Response) => {
@@ -10,7 +10,7 @@ app.all('*', (req: Request, res: Response) => {
 ```
 
 
-# //global error handler
+# global error handler
 
 ```
 app.use((error: any, req: Request, res: Response, next: NextFunction) => {

@@ -13,14 +13,22 @@ app.all('*', (req: Request, res: Response) => {
 # global error handler
 
 ```
-app.use((error: any, req: Request, res: Response, next: NextFunction) => {
+interface ErrorWithStatus extends Error {
+  status?: number;
+}
+
+app.use(
+  (error: ErrorWithStatus, req: Request, res: Response, next: NextFunction) => {
     if (error) {
-        res.status(400).json({
-            success: false,
-            message: "Something went wrong"
-        })
+      res.status(400).json({
+        success: false,
+        message:'Something went wrong',
+      });
+    } else {
+      next();
     }
-})
+  },
+);
 ```
 ## প্রতিটি crud operation এ অবশ্যই try-catch statement ব্যববহা করতে হবে ।
 ##  crud operation এর শেষে বসবে ।

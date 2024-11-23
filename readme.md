@@ -32,3 +32,5 @@ app.use(
 ```
 ## প্রতিটি crud operation এ অবশ্যই try-catch statement ব্যববহা করতে হবে ।
 ##  crud operation এর শেষে বসবে ।
+## app.ts এ export default app; এর উপরে custom error handler আর global error handler বসবে ।
+
